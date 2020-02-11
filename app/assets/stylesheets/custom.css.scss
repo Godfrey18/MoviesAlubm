@@ -1,2 +1,16 @@
-$navbar-default-bg: #ff6347;
+$navbar-default-bg: red;
+
 @import "bootstrap";
+
+#logo
+{
+float:left;
+color:black;
+transformation:uppercase;
+letter-spacing:-1px;
+font-size:30px;	
+}
+.center
+{
+	text-align:center;
+}
