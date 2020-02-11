@@ -1,0 +1,36 @@
+
+<% if @films.errors.any?%>
+<ul>
+ <%= @films.errors.full_messages.each do |f|%>
+   <li> <%=f%></li>
+   <%end%>
+</ul>
+   <%end%>
+
+
+<h1> Add New Films</h1>
+
+<%= form_for @films do |f| %>
+ 
+  <p>
+  	 <%= f.label :MovieName %>
+  	 <br><br>
+  	 <%= f.text_field :name %>
+  	</p>
+  	<p>
+  	 <%= f.label :Genere %>
+  	 <br><br>
+  	 <%= f.text_field :genere %>
+  	</p>
+  	<p>
+  	 <%= f.label :Langauge %>
+  	 <br><br>
+  	 <%= f.text_field :langauge %>
+  	</p>
+
+  	<p>
+  	 
+  	 <%= f.submit %>
+  	</p>
+  	<%end%>
+    <%= link_to "Back to Films listing", films_path %>

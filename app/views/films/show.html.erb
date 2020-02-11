@@ -1,0 +1,15 @@
+
+	<p>
+   <label>MovieName:<%=@films.name%></label> 	
+    	<br></p>
+
+    <p>
+   <label>Genere:<%=@films.genere%></label> 	
+    	<br></p>
+    	<p>
+   <label>Langauge:<%=@films.langauge%></label> 	
+    	<br></p>
+
+    	<%= link_to "Back to Films listing", films_path %>
+    	<br>
+    	<td><%= link_to 'Edit',edit_film_path(@films)%></td>
