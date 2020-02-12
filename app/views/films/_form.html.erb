@@ -8,29 +8,80 @@
    <%end%>
 
 
-<h1> Add New Films</h1>
+<h1 align="center"> Add New Films</h1>
 
-<%= form_for @films do |f| %>
- 
-  <p>
-  	 <%= f.label :MovieName %>
-  	 <br><br>
-  	 <%= f.text_field :name %>
-  	</p>
-  	<p>
-  	 <%= f.label :Genere %>
-  	 <br><br>
-  	 <%= f.text_field :genere %>
-  	</p>
-  	<p>
-  	 <%= f.label :Langauge %>
-  	 <br><br>
-  	 <%= f.text_field :langauge %>
-  	</p>
+<div class='row'>
 
-  	<p>
-  	 
-  	 <%= f.submit %>
-  	</p>
-  	<%end%>
-    <%= link_to "Back to Films listing", films_path %>
+<div class='col-xs-12'>
+
+<%= form_for(@films, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+<div class="form-group">
+
+<div class="control-label col-sm-2">
+
+<%= f.label :name %>
+
+</div>
+
+<div class="col-sm-12">
+
+<%= f.text_field :name, class: "form-control", placeholder: "Title of article", autofocus: true %>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<div class="control-label col-sm-2">
+
+<%= f.label :Genere %>
+
+</div>
+
+<div class="col-sm-12">
+
+<%= f.text_field :genere,  class: "form-control", placeholder: "Body of article" %>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<div class="control-label col-sm-2">
+
+<%= f.label :Langauage %>
+
+</div>
+
+<div class="col-sm-12">
+
+<%= f.text_field :langauge,  class: "form-control", placeholder: "Body of article" %>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<div class="col-sm-offset-2 col-sm-10">
+
+<%= f.submit class: 'btn btn-primary btn-lg' %>
+
+</div>
+
+</div>
+
+<% end %>
+
+<div class="col-xs-4 col-xs-offset-4">
+
+[ <%= link_to "Cancel request and return to articles listing", films_path %> ]
+
+</div>
+
+</div>
+
+</div>

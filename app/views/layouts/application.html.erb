@@ -12,18 +12,13 @@
   <body>
 
    <%= render 'layouts/navbar'%>
+<%= render 'layouts/messages'%>
 
-    <% flash.each do |name, msg| %>
 
-<ul>
-
-<li><%= msg %></li>
-
-</ul>
-
-<% end %>
+    
 <div class ="container">
     <%= yield %>
   </div>
+  <%= render 'layouts/footer'%>
   </body>
 </html>
