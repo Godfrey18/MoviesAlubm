@@ -45,7 +45,7 @@ before_action :set_id, only: [:edit,:destroy,:update,:show]
 
 		if @films.destroy
 			flash[:danger]="Deleted Sucessfully"
-			redirect_to films_path
+			redirect_to film_path
 		end
 	end
 
@@ -56,6 +56,6 @@ before_action :set_id, only: [:edit,:destroy,:update,:show]
 	end
 
 	def add_params
-		params.require(:film).permit(:name,:genere,:langauge)
+		params.require(:film).permit(:name,:genere,:langauge,:cast,:director,:release_date)
 	end
 	end

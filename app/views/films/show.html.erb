@@ -7,7 +7,13 @@
 
 <hr>
 
-<%= simple_format(@films.genere) %>
+Genere <%= simple_format(@films.genere) %>
+Langauage<%= simple_format(@films.langauge) %>
+Cast<%= simple_format(@films.cast) %>
+Director<%= simple_format(@films.director) %>
+Release<%= simple_format(@films.release_date.to_s) %>
+
+
 
 <div class="article-actions">
 
