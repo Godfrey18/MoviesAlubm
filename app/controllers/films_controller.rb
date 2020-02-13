@@ -21,7 +21,7 @@ before_action :set_id, only: [:edit,:destroy,:update,:show]
 	def create
 		@films =Film.new(add_params)
 		if @films.save
-			flash[:notice]= "Fil Created Sucesfully"
+			flash[:success]= "Fil Created Sucesfully"
 		redirect_to film_path(@films)
 		else
 		render :new
@@ -30,7 +30,7 @@ before_action :set_id, only: [:edit,:destroy,:update,:show]
 
 	def update
 		if @films.update(add_params)
-		flash[:notice] = "Film was successfully updated"
+		flash[:success] = "Film was successfully updated"
 		redirect_to film_path(@films)
 		else
 		render 'edit'
@@ -44,7 +44,7 @@ before_action :set_id, only: [:edit,:destroy,:update,:show]
 	def destroy
 
 		if @films.destroy
-			flash[:notice]="Deleted Sucessfully"
+			flash[:danger]="Deleted Sucessfully"
 			redirect_to films_path
 		end
 	end

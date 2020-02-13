@@ -1,15 +1,26 @@
 
-	<p>
-   <label>MovieName:<%=@films.name%></label> 	
-    	<br></p>
+<h2 align="center">Title: <%= @films.name %></h2>
 
-    <p>
-   <label>Genere:<%=@films.genere%></label> 	
-    	<br></p>
-    	<p>
-   <label>Langauge:<%=@films.langauge%></label> 	
-    	<br></p>
+<div class="well col-xs-8 col-xs-offset-2">
 
-    	<%= link_to "Back to Films listing", films_path %>
-    	<br>
-    	<td><%= link_to 'Edit',edit_film_path(@films)%></td>
+<h4 class="center description"><strong>Description:</strong></h4>
+
+<hr>
+
+<%= simple_format(@films.genere) %>
+
+<div class="article-actions">
+
+<%= link_to "Edit this Film ", edit_film_path(@films), class: "btn btn-xs btn-primary" %>
+
+<%= link_to "Delete this Film", films_path(@films), method: :delete,
+
+data: { confirm: "Are you sure you want to delete the Film?"},
+
+class: "btn btn-xs btn-danger" %>
+
+<%= link_to "View all Films", films_path, class: "btn btn-xs btn-success" %>
+
+</div>
+
+</div>

@@ -1,18 +1,15 @@
 
-<% if @films.errors.any?%>
-<ul>
- <%= @films.errors.full_messages.each do |f|%>
-   <li> <%=f%></li>
-   <%end%>
-</ul>
-   <%end%>
+<%= render 'shared/errors',obj: @films %>
 
+<div class ="container">
+<h1 align="center"> Add Films To List</h1>
 
-<h1 align="center"> Add New Films</h1>
+</div>
 
+<div class ="container form">
 <div class='row'>
 
-<div class='col-xs-12'>
+<div class='col-xs-8'>
 
 <%= form_for(@films, :html => {class: "form-horizontal", role: "form"}) do |f| %>
 
@@ -24,7 +21,7 @@
 
 </div>
 
-<div class="col-sm-12">
+<div class="col-sm-8">
 
 <%= f.text_field :name, class: "form-control", placeholder: "Title of article", autofocus: true %>
 
@@ -40,7 +37,7 @@
 
 </div>
 
-<div class="col-sm-12">
+<div class="col-sm-8">
 
 <%= f.text_field :genere,  class: "form-control", placeholder: "Body of article" %>
 
@@ -56,7 +53,7 @@
 
 </div>
 
-<div class="col-sm-12">
+<div class="col-sm-8">
 
 <%= f.text_field :langauge,  class: "form-control", placeholder: "Body of article" %>
 
@@ -76,12 +73,13 @@
 
 <% end %>
 
-<div class="col-xs-4 col-xs-offset-4">
+<div class="col-xs-6 col-xs-offset-4">
 
-[ <%= link_to "Cancel request and return to articles listing", films_path %> ]
+[ <%= link_to "Cancel request and return to Movies ", films_path %> ]
+
+</div>
 
 </div>
 
 </div>
-
 </div>

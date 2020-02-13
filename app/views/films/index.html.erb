@@ -1,28 +1,49 @@
 
-<h1>List of all The movies</h1>
+<h1 align="center">Listing all Movies</h1>
+<hr>
 
-<p>
-	<%=link_to 'Add a Film',new_film_path%>
-</p>
+<% @films.each do |film| %>
 
-<table>
-<tr>
-	<th>MovieName:</th>
-		<th> Genere</th>
-		<th>Langauage</th>
-</tr>
+<div class="row">
 
-<%@films.each do |film|%>
+<div class="col-xs-8 col-xs-offset-2">
 
-<tr>
-	<td><%=film.name%></td>
-	<td><%=film.genere%></td>
-	<td><%=film.langauge%></td>
-	<td><%= link_to 'Edit',edit_film_path(film)%></td>
-	<td><%= link_to 'Show',film_path(film)%></td>
-	<td><%= link_to 'Delete', film_path(film), method: :delete, data: {confirm: "Are you sure?"} %></td>
-</tr>
+<div class="well well-lg " >
+
+<div class="article-title">
+
+<%= link_to film.name, film_path(film) %>
+
+</div>
+
+<div class="article-body">
+
+<%= truncate(film.genere, length: 100) %>
+
+</div>
+
+<div class="article-body">
+
+<%= truncate(film.langauge, length: 100) %>
+
+</div>
+
+<div class="article-actions">
+
+<%= link_to "Edit this article", edit_film_path(film), class: "btn btn-xs btn-primary" %>
+
+<%= link_to "Delete this article", film_path(film), method: :delete,
+
+data: { confirm: "Are you sure you want to delete the article?"},
+
+class: "btn btn-xs btn-danger" %>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 <% end %>
-
-	
-	</table>
