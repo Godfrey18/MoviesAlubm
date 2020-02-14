@@ -25,7 +25,7 @@ def update
 
 @users = User.find(params[:id])
 
-if @user.update(user_params)
+if @users.update(user_params)
 
 flash[:success] = "Your account was updated successfully"
 
@@ -36,6 +36,12 @@ else
 render 'edit'
 
 end
+
+end
+
+def show
+
+@users = User.find(params[:id])
 
 end
 
