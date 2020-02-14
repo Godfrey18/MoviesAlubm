@@ -43,14 +43,17 @@ before_action :set_id, only: [:edit,:update,:show,:destroy]
 
 	def destroy
 
-
 		@films.destroy
 
-		flash[:danger] = "Article was successfully deleted"
+		flash[:danger] = "Film was successfully deleted"
 
 		redirect_to films_path
 
 		end
+
+		
+	
+
 
 	private
 
@@ -59,6 +62,6 @@ before_action :set_id, only: [:edit,:update,:show,:destroy]
 	end
 
 	def add_params
-		params.require(:film).permit(:name,:genere,:langauge)
+		params.require(:film).permit(:name,:genere,:langauge,:cast,:director,:release_date)
 	end
 	end
