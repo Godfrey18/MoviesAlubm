@@ -32,11 +32,9 @@
 
 <%= link_to "Edit this article", edit_film_path(film), class: "btn btn-xs btn-primary" %>
 
-<%= link_to "Delete this article", film_path(film), method: :delete,
+<td><%= link_to 'Delete', film_path(film), method: :delete, data: {confirm: "Are you sure?"} ,
 
-data: { confirm: "Are you sure you want to delete the article?"},
-
-class: "btn btn-xs btn-danger" %>
+class: "btn btn-xs btn-danger" %></td>
 
 </div>
 

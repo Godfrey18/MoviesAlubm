@@ -13,7 +13,7 @@
 
 <%= link_to "Edit this Film ", edit_film_path(@films), class: "btn btn-xs btn-primary" %>
 
-<%= link_to "Delete this Film", films_path(@films), method: :delete,
+<%= link_to "Delete this Film", film_path(@films), method: :delete,
 
 data: { confirm: "Are you sure you want to delete the Film?"},
 

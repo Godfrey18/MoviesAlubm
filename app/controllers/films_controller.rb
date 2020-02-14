@@ -1,7 +1,7 @@
 
 class FilmsController < ApplicationController
 
-before_action :set_id, only: [:edit,:destroy,:update,:show]
+before_action :set_id, only: [:edit,:update,:show,:destroy]
 
 	def index
 		
@@ -43,11 +43,14 @@ before_action :set_id, only: [:edit,:destroy,:update,:show]
 
 	def destroy
 
-		if @films.destroy
-			flash[:danger]="Deleted Sucessfully"
-			redirect_to films_path
+
+		@films.destroy
+
+		flash[:danger] = "Article was successfully deleted"
+
+		redirect_to films_path
+
 		end
-	end
 
 	private
 
