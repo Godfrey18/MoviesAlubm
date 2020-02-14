@@ -15,6 +15,30 @@ end
 
 end
 
+def edit
+
+@users = User.find(params[:id])
+
+end
+
+def update
+
+@users = User.find(params[:id])
+
+if @user.update(user_params)
+
+flash[:success] = "Your account was updated successfully"
+
+redirect_to films_path
+
+else
+
+render 'edit'
+
+end
+
+end
+
 private
 
 def user_params
