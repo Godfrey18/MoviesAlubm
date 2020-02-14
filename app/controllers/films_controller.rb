@@ -20,6 +20,7 @@ before_action :set_id, only: [:edit,:update,:show,:destroy]
 
 	def create
 		@films =Film.new(add_params)
+		@films.user = User.last
 		if @films.save
 			flash[:success]= "Fil Created Sucesfully"
 		redirect_to film_path(@films)
