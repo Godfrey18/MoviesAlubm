@@ -11,7 +11,7 @@ Genere <%= simple_format(@films.genere) %>
 Langauage<%= simple_format(@films.langauge) %>
 Cast<%= simple_format(@films.cast) %>
 Director<%= simple_format(@films.director) %>
-Release<%= simple_format(@films.release_date.to_s) %>
+Release<%= simple_format(@films.release_date.to_date.to_s) %>
 
 
 

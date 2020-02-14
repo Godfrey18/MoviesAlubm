@@ -45,7 +45,7 @@ before_action :set_id, only: [:edit,:update,:show,:destroy]
 
 		 @films.destroy
 			flash[:danger]="Deleted Sucessfully"
-			redirect_to film_path
+			redirect_to films_path
 		
 	end
 
