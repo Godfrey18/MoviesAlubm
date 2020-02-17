@@ -39,7 +39,7 @@ Director<%= simple_format(@films.director) %>
 Release<%= simple_format(@films.release_date.to_date.to_s) %>
 
 
-
+<% if logged_in? && current_user == @films.user %>
 <div class="article-actions">
 
 <%= link_to "Edit this Film ", edit_film_path(@films), class: "btn btn-xs btn-primary" %>
@@ -49,6 +49,7 @@ Release<%= simple_format(@films.release_date.to_date.to_s) %>
 data: { confirm: "Are you sure you want to delete the Film?"},
 
 class: "btn btn-xs btn-danger" %>
+<% end %>
 
 <%= link_to "View all Films", films_path, class: "btn btn-xs btn-success" %>
 

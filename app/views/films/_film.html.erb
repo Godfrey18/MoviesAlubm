@@ -34,12 +34,13 @@ last updated: <%= time_ago_in_words(film.updated_at) %> ago</small>
 
 </div>
 
+<% if logged_in? && current_user == film.user%>
 <div class="article-actions">
 
 <%= link_to "Edit this Film", edit_film_path(film), class: "btn btn-xs btn-primary" %>
 
 <td><%= link_to 'Delete', film_path(film), method: :delete, data: {confirm: "Are you sure?"} ,class: "btn btn-xs btn-danger" %></td>
-
+<% end %>
 </div>
 
 </div>
