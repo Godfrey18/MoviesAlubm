@@ -14,9 +14,11 @@ end
 def create
 @users =User.new(user_params)
 if @users.save
+	session[:user_id] = @users.id
 	flash[:success] = "Welcome to the Movies Album #{@users.username}"
-	redirect_to films_path
+	redirect_to user_path(@users)
 else
+	
 render 'new'
 end
 
