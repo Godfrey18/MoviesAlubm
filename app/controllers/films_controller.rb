@@ -5,7 +5,8 @@ before_action :set_id, only: [:edit,:update,:show,:destroy]
 
 	def index
 		
-		@films= Film.all
+		@films= Film.paginate(page: params[:page], per_page: 5)
+
 	end
 
 
