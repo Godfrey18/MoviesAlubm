@@ -34,7 +34,7 @@ last updated: <%= time_ago_in_words(film.updated_at) %> ago</small>
 
 </div>
 
-<% if logged_in? && current_user == film.user%>
+<% if logged_in? && (current_user == film.user || current_user.admin?)%>
 <div class="article-actions">
 
 <%= link_to "Edit this Film", edit_film_path(film), class: "btn btn-xs btn-primary" %>

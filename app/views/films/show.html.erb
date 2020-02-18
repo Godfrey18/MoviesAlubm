@@ -39,7 +39,7 @@ Director<%= simple_format(@films.director) %>
 Release<%= simple_format(@films.release_date.to_date.to_s) %>
 
 
-<% if logged_in? && current_user == @films.user %>
+<% if logged_in? && (current_user == @films.user || current_user.admin?) %>
 <div class="article-actions">
 
 <%= link_to "Edit this Film ", edit_film_path(@films), class: "btn btn-xs btn-primary" %>
